@@ -1010,7 +1010,8 @@ Namespace RSWINV3
 						flag2 = flag
 					Else
 						If rst.SPMEntered <> 0S Then
-							If(If((-If((Not RSWIN_DESC.bBETA > False), 1S, 0S)), 1S, 0S) And RSWIN_DESC.SETUP_UseImpred) <> 0S AndAlso Conversions.ToBoolean(Operators.AndObject(Operators.OrObject(Operators.OrObject(Operators.CompareObjectEqual(Motor.GetMotorInfo(4), 1, False), Operators.CompareObjectEqual(Motor.GetMotorInfo(4), 7, False)), Operators.CompareObjectGreaterEqual(Motor.GetMotorInfo(4), 8, False)), If((-If((RSWIN_DESC.rst.MotorSPV > 0F > False), 1S, 0S)), 1S, 0S) Or RSWIN_DESC.rst.CalcMotorSPV)) AndAlso RSWIN_DESC.SETUP_CalcVBeltRatio <> 0S Then
+							Dim hasMotorInfo As Boolean = Motor.GetMotorInfo(4) = 1 OrElse Motor.GetMotorInfo(4) = 7 OrElse Motor.GetMotorInfo(4) >= 8 OrElse RSWIN_DESC.rst.MotorSPV > 0F OrElse RSWIN_DESC.rst.CalcMotorSPV
+							If Not RSWIN_DESC.bBETA AndAlso RSWIN_DESC.SETUP_UseImpred <> 0S AndAlso hasMotorInfo AndAlso RSWIN_DESC.SETUP_CalcVBeltRatio <> 0S Then
 								flag = PREDICT.Predict(False, "DesignUser")
 								If(flag And RSWIN_DESC.bRodStarD And RSWIN_DESC.bDoNegativeStressCheck) AndAlso DESIGN.CheckForNegativeStresses() Then
 									flag = PREDICT.Predict(False, "DesignUser")

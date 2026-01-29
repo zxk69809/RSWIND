@@ -135,8 +135,8 @@ Namespace RSWINV3
 							Dim tq As Single = RSWIN_DESC.rst.Tnet(1, i)
 							Dim flag3 As Boolean = num15 <> 0
 							Motor.MotorEfficiency(tq, num16, flag3)
-							num15 = If(-If((flag3 > False), 1, 0), 1, 0)
-							If(If(-If((CDbl(num16) <= 0.001 > False), 1, 0), 1, 0) Or num15) <> 0 Then
+							num15 = If(flag3, 1, 0)
+							If num16 <= 0.001F OrElse num15 <> 0 Then
 								num11 += 1
 							End If
 						Next
@@ -148,8 +148,8 @@ Namespace RSWINV3
 							Dim tq2 As Single = RSWIN_DESC.rst.Tnet(2, i)
 							Dim flag3 As Boolean = num15 <> 0
 							Motor.MotorEfficiency(tq2, num16, flag3)
-							num15 = If(-If((flag3 > False), 1, 0), 1, 0)
-							If(If(-If((CDbl(num16) <= 0.001 > False), 1, 0), 1, 0) Or num15) <> 0 Then
+							num15 = If(flag3, 1, 0)
+							If num16 <= 0.001F OrElse num15 <> 0 Then
 								num12 += 1
 							End If
 						Next
@@ -165,17 +165,16 @@ Namespace RSWINV3
 							Dim num16 As Single
 							Motor.MotorEfficiency(tq3, num16, flag3)
 
-								num15 = If((-If((flag3 > False), 1, 0)), 1, 0)
-								If(If((-If((CDbl(num16) <= 0.001 > False), 1, 0)), 1, 0) Or num15) <> 0 Then
-									' The following expression was wrapped in a checked-statement
-									num11 += 1
-								End If
-								Dim tq4 As Single = RSWIN_DESC.rst.Tnet(2, i)
-								flag3 = (num15 <> 0)
-								Motor.MotorEfficiency(tq4, num16, flag3)
-								num15 = If((-If((flag3 > False), 1, 0)), 1, 0)
+							num15 = If(flag3, 1, 0)
+							If num16 <= 0.001F OrElse num15 <> 0 Then
+								num11 += 1
+							End If
+							Dim tq4 As Single = RSWIN_DESC.rst.Tnet(2, i)
+							flag3 = (num15 <> 0)
+							Motor.MotorEfficiency(tq4, num16, flag3)
+							num15 = If(flag3, 1, 0)
 
-							If(If(-If((CDbl(num16) <= 0.001 > False), 1, 0), 1, 0) Or num15) <> 0 Then
+							If num16 <= 0.001F OrElse num15 <> 0 Then
 								num12 += 1
 							End If
 						Next
