@@ -22,17 +22,17 @@ Namespace RSWINV3
 					RSWIN_DESC.rst.UnknownM = True
 				End If
 				Application.DoEvents()
-				RSWIN_DESC.bOverwriteDownstrokeValues = ((RSWIN_DESC.SETUP_UseImpred And If((-If((RSWIN_DESC.bRodStarD > False), 1S, 0S)), 1S, 0S)) <> 0S)
+				RSWIN_DESC.bOverwriteDownstrokeValues = (RSWIN_DESC.SETUP_UseImpred <> 0S AndAlso RSWIN_DESC.bRodStarD)
 				Dim flag As Boolean
 				Dim num5 As Single
 				Dim ntsteps As Integer
 				Dim num6 As Integer
-				If(If((-If((RSWIN_DESC.rst.PumpDepth < 1500F > False), 1S, 0S)), 1S, 0S) And RSWIN_DESC.rst.IncludeFluidInertia And If((-If((RSWIN_DESC.bOverwriteDownstrokeValues > False), 1S, 0S)), 1S, 0S)) <> 0S Then
+				If RSWIN_DESC.rst.PumpDepth < 1500F AndAlso RSWIN_DESC.rst.IncludeFluidInertia <> 0S AndAlso RSWIN_DESC.bOverwriteDownstrokeValues Then
 					RSWIN_DESC.rst.IncludeFluidInertia = 0S
-					If(RSWIN_DESC.SETUP_UseImpred And If((-If((RSWIN_DESC.bRodStarD > False), 1S, 0S)), 1S, 0S)) <> 0S Then
+					If RSWIN_DESC.SETUP_UseImpred <> 0S AndAlso RSWIN_DESC.bRodStarD Then
 						MImpred.bVBeltRatio = bVBeltRatio
 						flag = MImpred.Impred()
-						If(RSWIN_DESC.SETUP_UseImpred And If((-If((RSWIN_DESC.bRodStarD > False), 1S, 0S)), 1S, 0S)) <> 0S Then
+						If RSWIN_DESC.SETUP_UseImpred <> 0S AndAlso RSWIN_DESC.bRodStarD Then
 							RSWIN_DESC.Impred_NOFI = New TEImpred()
 							Dim impredObj As TEImpred = MImpred.ImpredObj
 							RSWIN_DESC.Impred_NOFI = impredObj
@@ -52,7 +52,7 @@ Namespace RSWINV3
 					num6 = CInt(Math.Round(CDbl(num5)))
 					RSWIN_DESC.rst.IncludeFluidInertia = -1S
 				End If
-				If(RSWIN_DESC.SETUP_UseImpred And If((-If((RSWIN_DESC.bRodStarD > False), 1S, 0S)), 1S, 0S)) <> 0S Then
+				If RSWIN_DESC.SETUP_UseImpred <> 0S AndAlso RSWIN_DESC.bRodStarD Then
 					MImpred.bVBeltRatio = bVBeltRatio
 					flag = MImpred.Impred()
 				Else
@@ -60,14 +60,14 @@ Namespace RSWINV3
 					MJPred.RunJPred("")
 					flag = True
 				End If
-				If(If((-If((RSWIN_DESC.rst.PumpDepth < 1500F > False), 1S, 0S)), 1S, 0S) And RSWIN_DESC.rst.IncludeFluidInertia And If((-If((RSWIN_DESC.bOverwriteDownstrokeValues > False), 1S, 0S)), 1S, 0S)) <> 0S Then
+				If RSWIN_DESC.rst.PumpDepth < 1500F AndAlso RSWIN_DESC.rst.IncludeFluidInertia <> 0S AndAlso RSWIN_DESC.bOverwriteDownstrokeValues Then
 					Dim surfPos2 As Single() = RSWIN_DESC.rst.SurfPos
 					Dim num4 As Single = 0F
 					Dim num3 As Single = 0F
 					Dim num2 As Single = 0F
 					Util.Maxmin(surfPos2, num4, num3, num5, num2)
 					Dim num7 As Integer = CInt(Math.Round(CDbl(num5)))
-					If(RSWIN_DESC.SETUP_UseImpred And If(-If((RSWIN_DESC.bRodStarD > False), 1S, 0S), 1S, 0S)) <> 0S Then
+					If RSWIN_DESC.SETUP_UseImpred <> 0S AndAlso RSWIN_DESC.bRodStarD Then
 						PREDICT.OverwriteDownstroke(num7, num6, ntsteps)
 					Else
 						Dim num8 As Integer = 0
