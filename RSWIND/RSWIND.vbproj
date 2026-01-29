@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{6223CE6F-1308-438A-9597-105122054B3B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RSWINV3</RootNamespace>
+    <AssemblyName>RSWIND</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>RSWIND.ico</ApplicationIcon>
+    <StartupObject>RSWINV3.RODSTAR</StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveReports.Document">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\ActiveReports.Document.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveReports.PdfExport">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\ActiveReports.PdfExport.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveReports.Viewer6">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\ActiveReports.Viewer6.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveReports6">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\ActiveReports6.dll</HintPath>
+    </Reference>
+    <Reference Include="CBFile">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\CBFile.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.WinForms">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\ChartFX.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.WinForms.Adornments">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\ChartFX.WinForms.Adornments.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.WinForms.Annotation">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\ChartFX.WinForms.Annotation.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.WinForms.Base">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\ChartFX.WinForms.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v10.1">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\Infragistics2.Shared.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v10.1">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\Infragistics2.Win.Misc.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.1">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\Infragistics2.Win.UltraWinGrid.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v10.1">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\Infragistics2.Win.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics3.Excel.v10.1">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\Infragistics3.Excel.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\Microsoft.VisualBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\Microsoft.VisualBasic.Compatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TeeChart">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\TeeChart.dll</HintPath>
+    </Reference>
+    <Reference Include="ThetaLMNet">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\ThetaLMNet.dll</HintPath>
+    </Reference>
+    <Reference Include="ThetaStdInfo">
+      <HintPath>E:\工作目录\RODSTAR\RODSTAR-D\ThetaStdInfo.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIROD.vb" />
+    <Compile Include="Batch.vb" />
+    <Compile Include="BatchLog.Designer.vb">
+      <DependentUpon>BatchLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BatchLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cCustom.vb" />
+    <Compile Include="cGlobal.vb" />
+    <Compile Include="cGuruFileData.vb" />
+    <Compile Include="CHECKSN.vb" />
+    <Compile Include="cImplementGuideChanges.vb" />
+    <Compile Include="cJPred.vb" />
+    <Compile Include="Classify.vb" />
+    <Compile Include="CLIPXML.vb" />
+    <Compile Include="Clock.Designer.vb">
+      <DependentUpon>Clock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Clock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cMenu.vb" />
+    <Compile Include="COSTDB.vb" />
+    <Compile Include="cRecPU.vb" />
+    <Compile Include="cRodGrade.vb" />
+    <Compile Include="cRodGuide.vb" />
+    <Compile Include="cRodSize.vb" />
+    <Compile Include="cRODSTAR.vb" />
+    <Compile Include="cRodType.vb" />
+    <Compile Include="csVersion.vb" />
+    <Compile Include="CThetaApp.vb" />
+    <Compile Include="CtrlUI.vb" />
+    <Compile Include="Custom.vb" />
+    <Compile Include="CUSTOMPU.vb" />
+    <Compile Include="CUSTOMRG.vb" />
+    <Compile Include="CWindowManager.vb" />
+    <Compile Include="db_guru_admin_form.Designer.vb">
+      <DependentUpon>db_guru_admin_form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="db_guru_admin_form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DESIGN.vb" />
+    <Compile Include="DESIGNFG.vb" />
+    <Compile Include="DESIGNST.vb" />
+    <Compile Include="DeviationProfile.Designer.vb">
+      <DependentUpon>DeviationProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DeviationProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs.vb" />
+    <Compile Include="dlgAIPreference.Designer.vb">
+      <DependentUpon>dlgAIPreference.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgAIPreference.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgBatchOpts.Designer.vb">
+      <DependentUpon>dlgBatchOpts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgBatchOpts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgCBData.Designer.vb">
+      <DependentUpon>dlgCBData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgCBData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgCoverPageComments.Designer.vb">
+      <DependentUpon>dlgCoverPageComments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgCoverPageComments.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgCustomPU.Designer.vb">
+      <DependentUpon>dlgCustomPU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgCustomPU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgCustomRG.Designer.vb">
+      <DependentUpon>dlgCustomRG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgCustomRG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgCustomUnitComparison.Designer.vb">
+      <DependentUpon>dlgCustomUnitComparison.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgCustomUnitComparison.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgDeviationEntries.Designer.vb">
+      <DependentUpon>dlgDeviationEntries.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgDeviationEntries.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgDuplicateCustomPumpingUnit.Designer.vb">
+      <DependentUpon>dlgDuplicateCustomPumpingUnit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgDuplicateCustomPumpingUnit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgDuplicateCustomRodGrade.Designer.vb">
+      <DependentUpon>dlgDuplicateCustomRodGrade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgDuplicateCustomRodGrade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgGuides.Designer.vb">
+      <DependentUpon>dlgGuides.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgGuides.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgImplementGuideChanges.Designer.vb">
+      <DependentUpon>dlgImplementGuideChanges.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgImplementGuideChanges.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgPrint.Designer.vb">
+      <DependentUpon>dlgPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgPrintSetup.Designer.vb">
+      <DependentUpon>dlgPrintSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgPrintSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgPUList.Designer.vb">
+      <DependentUpon>dlgPUList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgPUList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgPUManuf.Designer.vb">
+      <DependentUpon>dlgPUManuf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgPUManuf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgSelectCBM.Designer.vb">
+      <DependentUpon>dlgSelectCBM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgSelectCBM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgSelectDir.Designer.vb">
+      <DependentUpon>dlgSelectDir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgSelectDir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgSelectInput.Designer.vb">
+      <DependentUpon>dlgSelectInput.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgSelectInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgVerifyMotorHP.Designer.vb">
+      <DependentUpon>dlgVerifyMotorHP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgVerifyMotorHP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgVerifySPM.Designer.vb">
+      <DependentUpon>dlgVerifySPM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgVerifySPM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgWK1Setup.Designer.vb">
+      <DependentUpon>dlgWK1Setup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgWK1Setup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcelXLS.vb" />
+    <Compile Include="ExcelXLS_Infragistics.vb" />
+    <Compile Include="FAboutSplash.Designer.vb">
+      <DependentUpon>FAboutSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FAboutSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FILEIO.vb" />
+    <Compile Include="FILEUTIL.vb" />
+    <Compile Include="frmDemoMode.Designer.vb">
+      <DependentUpon>frmDemoMode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDemoMode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevSettings.Designer.vb">
+      <DependentUpon>frmDevSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDevSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHowToStart.Designer.vb">
+      <DependentUpon>frmHowToStart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHowToStart.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportDialog.Designer.vb">
+      <DependentUpon>frmImportDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoadGuruFNames.Designer.vb">
+      <DependentUpon>frmLoadGuruFNames.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoadGuruFNames.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSendEmail.Designer.vb">
+      <DependentUpon>frmSendEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSendEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWizard.Designer.vb">
+      <DependentUpon>frmWizard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GURU_DB.vb" />
+    <Compile Include="ini.vb" />
+    <Compile Include="IPR.vb" />
+    <Compile Include="IPRPlot.Designer.vb">
+      <DependentUpon>IPRPlot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IPRPlot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IPRReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kinemat.vb" />
+    <Compile Include="LibWrap.vb" />
+    <Compile Include="LOADCBL.vb" />
+    <Compile Include="LOADRDG.vb" />
+    <Compile Include="LOADRST.vb" />
+    <Compile Include="LoadXDG.vb" />
+    <Compile Include="mCbalance_dec.vb" />
+    <Compile Include="MImpred.vb" />
+    <Compile Include="MJPred.vb" />
+    <Compile Include="Motor.vb" />
+    <Compile Include="MotorData.Designer.vb">
+      <DependentUpon>MotorData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MotorData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MRes.vb" />
+    <Compile Include="MRodstarXML.vb" />
+    <Compile Include="MWDown.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My\MyApplication.vb" />
+    <Compile Include="My\MyComputer.vb" />
+    <Compile Include="My\MyProject.vb" />
+    <Compile Include="My\Resources\Resources.vb" />
+    <Compile Include="PREDICT.vb" />
+    <Compile Include="PRINTING.vb" />
+    <Compile Include="ProdInfo.Designer.vb">
+      <DependentUpon>ProdInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProdInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PTInfo.Designer.vb">
+      <DependentUpon>PTInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PTInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PUData.Designer.vb">
+      <DependentUpon>PUData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PUData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PUDATA1.vb" />
+    <Compile Include="PumpCard.vb" />
+    <Compile Include="RegressionObject.vb" />
+    <Compile Include="Results.Designer.vb">
+      <DependentUpon>Results.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Results.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RESULTS1.vb" />
+    <Compile Include="Retail.vb" />
+    <Compile Include="RODSTAR.Designer.vb">
+      <DependentUpon>RODSTAR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RODSTAR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RODUTIL.vb" />
+    <Compile Include="rptAll.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBatchLog.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCalcResults.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCalcResults_Summary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCostAnalysis.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCostAnalysis_D.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCoverPage.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDeviationProfile.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDeviationSurvey.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDevSurvey3DPlot.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDynoAndTorqueChart.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDynoAndTorqueChart_Landscape.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptExpertAnalysis.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptExpertSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptOrderForm.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptRecommendedGuideReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptRecommendedGuideReport2.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptResultsInputs.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptResultsOutputs.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RSInput.Designer.vb">
+      <DependentUpon>RSInput.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RSInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RSWIN.vb" />
+    <Compile Include="RswinSetup.Designer.vb">
+      <DependentUpon>RswinSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RswinSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RSWIN_DESC.vb" />
+    <Compile Include="RUNCALC.vb" />
+    <Compile Include="SAVEFILE.vb" />
+    <Compile Include="SaveXDG.vb" />
+    <Compile Include="SendMail.vb" />
+    <Compile Include="SetupEquip.Designer.vb">
+      <DependentUpon>SetupEquip.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SetupEquip.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUPERPRO.vb" />
+    <Compile Include="SuperproLib.vb" />
+    <Compile Include="SystemOfUnits.Designer.vb">
+      <DependentUpon>SystemOfUnits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SystemOfUnits.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEImpred.vb" />
+    <Compile Include="ThetaLM32_LockedOutSN.vb" />
+    <Compile Include="Torquebal.vb" />
+    <Compile Include="Util.vb" />
+    <Compile Include="VB301COMMON.vb" />
+    <Compile Include="Verify.vb" />
+    <Compile Include="Version.Designer.vb">
+      <DependentUpon>Version.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Version.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VERSION1.vb" />
+    <Compile Include="VisInput.Designer.vb">
+      <DependentUpon>VisInput.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VisInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WellInfo.Designer.vb">
+      <DependentUpon>WellInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WellInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BatchLog.resources" />
+    <EmbeddedResource Include="Clock.resources" />
+    <EmbeddedResource Include="db_guru_admin_form.resources" />
+    <EmbeddedResource Include="DeviationProfile.resources" />
+    <EmbeddedResource Include="dlgAIPreference.resources" />
+    <EmbeddedResource Include="dlgBatchOpts.resources" />
+    <EmbeddedResource Include="dlgCBData.resources" />
+    <EmbeddedResource Include="dlgCoverPageComments.resources" />
+    <EmbeddedResource Include="dlgCustomPU.resources" />
+    <EmbeddedResource Include="dlgCustomRG.resources" />
+    <EmbeddedResource Include="dlgCustomUnitComparison.resources" />
+    <EmbeddedResource Include="dlgDeviationEntries.resources" />
+    <EmbeddedResource Include="dlgDuplicateCustomPumpingUnit.resources" />
+    <EmbeddedResource Include="dlgDuplicateCustomRodGrade.resources" />
+    <EmbeddedResource Include="dlgGuides.resources" />
+    <EmbeddedResource Include="dlgImplementGuideChanges.resources" />
+    <EmbeddedResource Include="dlgPrint.resources" />
+    <EmbeddedResource Include="dlgPrintSetup.resources" />
+    <EmbeddedResource Include="dlgPUList.resources" />
+    <EmbeddedResource Include="dlgPUManuf.resources" />
+    <EmbeddedResource Include="dlgSelectCBM.resources" />
+    <EmbeddedResource Include="dlgSelectDir.resources" />
+    <EmbeddedResource Include="dlgSelectInput.resources" />
+    <EmbeddedResource Include="dlgVerifyMotorHP.resources" />
+    <EmbeddedResource Include="dlgVerifySPM.resources" />
+    <EmbeddedResource Include="dlgWK1Setup.resources" />
+    <EmbeddedResource Include="FAboutSplash.resources" />
+    <EmbeddedResource Include="frmDemoMode.resources" />
+    <EmbeddedResource Include="frmDevSettings.resources" />
+    <EmbeddedResource Include="frmHowToStart.resources" />
+    <EmbeddedResource Include="frmImportDialog.resources" />
+    <EmbeddedResource Include="frmLoadGuruFNames.resources" />
+    <EmbeddedResource Include="frmSendEmail.resources" />
+    <EmbeddedResource Include="frmWizard.resources" />
+    <EmbeddedResource Include="IPRPlot.resources" />
+    <EmbeddedResource Include="IPRReport.resources" />
+    <EmbeddedResource Include="MotorData.resources" />
+    <EmbeddedResource Include="ProdInfo.resources" />
+    <EmbeddedResource Include="PTInfo.resources" />
+    <EmbeddedResource Include="PUData.resources" />
+    <EmbeddedResource Include="Resources.resources" />
+    <EmbeddedResource Include="Results.resources" />
+    <EmbeddedResource Include="RODSTAR.resources" />
+    <EmbeddedResource Include="rptAll.resources" />
+    <EmbeddedResource Include="rptBatchLog.resources" />
+    <EmbeddedResource Include="rptCalcResults.resources" />
+    <EmbeddedResource Include="rptCalcResults_Summary.resources" />
+    <EmbeddedResource Include="rptCostAnalysis.resources" />
+    <EmbeddedResource Include="rptCostAnalysis_D.resources" />
+    <EmbeddedResource Include="rptCoverPage.resources" />
+    <EmbeddedResource Include="rptDeviationProfile.resources" />
+    <EmbeddedResource Include="rptDeviationSurvey.resources" />
+    <EmbeddedResource Include="rptDevSurvey3DPlot.resources" />
+    <EmbeddedResource Include="rptDynoAndTorqueChart.resources" />
+    <EmbeddedResource Include="rptDynoAndTorqueChart_Landscape.resources" />
+    <EmbeddedResource Include="rptExpertAnalysis.resources" />
+    <EmbeddedResource Include="rptExpertSummary.resources" />
+    <EmbeddedResource Include="rptOrderForm.resources" />
+    <EmbeddedResource Include="rptRecommendedGuideReport.resources" />
+    <EmbeddedResource Include="rptRecommendedGuideReport2.resources" />
+    <EmbeddedResource Include="rptResultsInputs.resources" />
+    <EmbeddedResource Include="rptResultsOutputs.resources" />
+    <EmbeddedResource Include="RSInput.resources" />
+    <EmbeddedResource Include="RSWIND.exe.licenses" />
+    <EmbeddedResource Include="RswinSetup.resources" />
+    <EmbeddedResource Include="SetupEquip.resources" />
+    <EmbeddedResource Include="SystemOfUnits.resources" />
+    <EmbeddedResource Include="Version.resources" />
+    <EmbeddedResource Include="VisInput.resources" />
+    <EmbeddedResource Include="WellInfo.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
