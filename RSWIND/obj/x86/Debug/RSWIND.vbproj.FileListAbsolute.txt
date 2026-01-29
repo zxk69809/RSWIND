@@ -1,0 +1,4 @@
+C:\Users\zack\Desktop\新建文件夹 (4)\RSWIND\obj\x86\Debug\RSWIND.vbproj.AssemblyReference.cache
+C:\Users\zack\Desktop\新建文件夹 (4)\RSWIND\obj\x86\Debug\RSWIND.vbproj.CoreCompileInputs.cache
+E:\工作目录\RODSTAR\Code_vb\RSWIND\obj\x86\Debug\RSWIND.vbproj.AssemblyReference.cache
+E:\工作目录\RODSTAR\Code_vb\RSWIND\obj\x86\Debug\RSWIND.vbproj.CoreCompileInputs.cache
